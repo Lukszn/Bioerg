@@ -41,17 +41,19 @@ public class BioergActivity extends AppCompatActivity {
                 float num4 = Float.parseFloat(number4Txt.getText().toString());
 
                 float total = num4 - (num2 - num3);
+                float firstSum = num1 - num2;
                 float example = 5 - total;
                 float displacement = total / 2;
-                String displacementS = "przesuń dławik od tulejki o:" + " " + displacement + " cm";
-                String roznica = "dodaj podkładkę:" + " " + example + " cm";
+                float sum = firstSum - displacement;
+                String displacementS = "przesuń dławik od tulejki o:" + " " + sum + " mm";
+                String difference = "dodaj podkładkę:" + " " + example + " cm";
                 totalSumTxt.setText(Float.toString(total) + " cm");
                 displacementTxt.setVisibility(INVISIBLE);
 
 
                 if (total < 4.99 || total > 6.00){
                     totalSumTxt.setTextColor(Color.RED);
-                    displacementTxt.setText(roznica);
+                    displacementTxt.setText(difference);
                     displacementTxt.setVisibility(View.VISIBLE);
                 }else{
                     totalSumTxt.setTextColor(Color.GREEN);
